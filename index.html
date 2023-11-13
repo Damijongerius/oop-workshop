@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css">
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h3>object georiënteerd programmeren</h3>
+				<img src="img/oop.png" alt="oops" class="frontImage">
+				<p class="author">
+					<small><small>gemaakt door dami ☺</small></small>
+				</p>
+			</section>
+
+			<section>
+				<section class="random">
+					<h3>sorry wat?</h3>
+					<h3>praat je chinees?</h3>
+					<h3>ooh wel van gehoord</h3>
+					<h3>pff dit kan ik al</h3>
+					<h3>ben benieuwd</h3>
+					<h3>waneer is de pauze</h3>
+					<h3>rocket league?</h3>
+				</section>
+				<section style="background-color: #ffffcc;">
+					<h3>Herkennings punten</h3>
+					<p>het organiseren van code in herbruikbare stukjes, genaamd '<strong>objecten</strong>'.</p>
+					<p>werken met verschillende '<strong>klassen</strong>' voor structurering van code.</p>
+					<p>het concept van '<strong>encapsulatie</strong>' voor het verbergen van velden en methodes in
+						klassen.</p>
+				</section>
+				<section data-auto-animate>
+					<h2 data-id="code-title">Voorbeeldje</h2>
+					<pre data-id="code-animation"><code data-trim data-line-numbers="|1|2|"><script type="text/template">
+						const element = document.getElementById("id01");
+						element.innerHTML = "New Heading";
+					</script></code></pre>
+				</section>
+			</section>
+			<section data-background="#c9e5ff">
+				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+					<h2 data-id="klasse">Klasse</h2>
+					<p>dit is de blauwdruk voor mijn huizen</p>
+					<div class="r-hstack justify-center">
+						<div data-id="house1" class="blueprint">
+							<div class="house">
+								<div class="roof"></div>
+								<div class="walls">
+									<div class="door"></div>
+									<div class="window"></div>
+									<div class="chimney"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+					<h2 data-id="klasse">Klasse</h2>
+					<div class="r-hstack justify-center">
+						<div data-id="house1" class="blueprint">
+							<div class="house">
+								<div class="roof"></div>
+								<div class="walls">
+									<div class="door"></div>
+									<div class="window"></div>
+									<div class="chimney"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h2 style="margin-top: 20px;">Objecten/Instanties</h2>
+					<div class="r-hstack justify-center">
+						<div data-id="house2" class="house">
+							<div class="roof"></div>
+							<div class="walls">
+								<div class="door"></div>
+								<div class="window"></div>
+								<div class="chimney"></div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+					<h2 data-id="klasse">Klasse</h2>
+					<div class="r-hstack justify-center">
+						<div data-id="house1" class="blueprint">
+							<div class="house">
+								<div class="roof"></div>
+								<div class="walls">
+									<div class="door"></div>
+									<div class="window"></div>
+									<div class="chimney"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h2 style="margin-top: 20px;">Objecten/Instanties</h2>
+					<div class="r-hstack justify-center">
+						<div data-id="house2" class="house">
+							<div class="roof"></div>
+							<div class="walls">
+								<div class="door"></div>
+								<div class="window"></div>
+								<div class="chimney"></div>
+							</div>
+						</div>
+						<div data-id="house3" class="house">
+							<div class="roof"></div>
+							<div class="walls">
+								<div class="door"></div>
+								<div class="window"></div>
+								<div class="chimney"></div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+					<h2 data-id="klasse">Klasse</h2>
+					<div class="r-hstack justify-center">
+						<div data-id="house1" class="blueprint">
+							<div class="house">
+								<div class="roof"></div>
+								<div class="walls">
+									<div class="door"></div>
+									<div class="window"></div>
+									<div class="chimney"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h2 style="margin-top: 20px;">Objecten/Instanties</h2>
+					<div class="r-hstack justify-center">
+						<div data-id="house2" class="house">
+							<div class="roof"></div>
+							<div class="walls">
+								<div class="door"></div>
+								<div class="window"></div>
+								<div class="chimney"></div>
+							</div>
+						</div>
+						<div data-id="house3" class="house">
+							<div class="roof"></div>
+							<div class="walls">
+								<div class="door"></div>
+								<div class="window"></div>
+								<div class="chimney"></div>
+							</div>
+						</div>
+						<div data-id="house4" class="house">
+							<div class="roof"></div>
+							<div class="walls">
+								<div class="door"></div>
+								<div class="window"></div>
+								<div class="chimney"></div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+					<h2 style="margin-top: 20px;">Objecten/Instanties</h2>
+					<div class="r-hstack justify-center">
+						<div style="padding: 10px;">
+							<p><small>inwoners = 2</small></p>
+							<p><small>straatnaam = dominusStraat</small></p>
+							<p><small>huis nummer = 23</small></p>
+							<p><small>huis waarde = 500 000</small></p>
+							<p><small>bouwjaar = 1970</small></p>
+						</div>
+						<div style="padding: 10px;">
+							<p><small>inwoners = 5</small></p>
+							<p><small>straatnaam = diamondStraat</small></p>
+							<p><small>huis nummer = 64</small></p>
+							<p><small>huis waarde = 2 500 000</small></p>
+							<p><small>bouwjaar = 2010</small></p>
+						</div>
+						<div style="padding: 10px;">
+							<p><small>inwoners = 7</small></p>
+							<p><small>straatnaam = aapenStraat</small></p>
+							<p><small>huis nummer = 69</small></p>
+							<p><small>huis waarde = 420 000</small></p>
+							<p><small>bouwjaar = 1969</small></p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2 data-id="code-title">De huis Klasse</h2>
+					<p>Javascript</p>
+					<pre data-id="code-animation"><code data-trim data-line-numbers="|1,13|3-4|5-11|">
+						class Huis {
+
+							constructor(inwoners, straatNaam, nummer,
+						       postcode, Waarde, Oppervlakte, bouwjaar) {
+								this._inwoners = inwoners
+								this._straatNaam = straatNaam;
+								this._nummer = nummer;
+								this._postcode = postcode;
+								this._Waarde = Waarde;
+								this._Oppervlakte = Oppervlakte;
+								this._bouwjaar = bouwjaar;
+							}
+						}
+					</code></pre>
+				</section>
+				<section>
+					<h2 data-id="code-title">De huis Klasse</h2>
+					<p>Java/c#</p>
+					<pre data-id="code-animation"><code data-trim data-line-numbers="|1,21|3-9|11-12|13-19|">
+						public class Huis {
+
+							private int inwoners;
+							private String straatNaam;
+							private int nummer;
+							private String postcode;
+							private int Waarde;
+							private int Oppervlakte;
+							private int bouwjaar;
+
+							public Huis(int inwoners, String straatNaam, int nummer,
+						       String postcode, int Waarde, int Oppervlakte, int bouwjaar) {
+								this.inwoners = inwoners;
+								this.straatNaam = straatNaam;
+								this.nummer = nummer;
+								this.postcode = postcode;
+								this.Waarde = Waarde;
+								this.Oppervlakte = Oppervlakte;
+								this.bouwjaar = bouwjaar;
+							}
+						}
+					</code></pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>het toepassen en gebruiken van klasse</h2>
+				</section>
+				<section>
+
+				</section>
+			</section>
+		</div>
+	</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		Reveal.initialize({
+			hash: true,
+
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
