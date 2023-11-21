@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huis Form</title>
+
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section class="form-container">
+                <h2>Huis Information Form</h2>
+                <form id="huisForm">
+                    <label for="inwoners"><small>Number of Inhabitants:</small></label>
+                    <input type="number" id="inwoners" required>
+
+                    <label for="straatNaam"><small>Street Name:</label>
+                    <input type="text" id="straatNaam" required>
+
+                    <label for="nummer">House Number:</label>
+                    <input type="text" id="nummer" required>
+
+                    <label for="postcode">Postal Code:</label>
+                    <input type="text" id="postcode" required>
+
+                    <label for="waarde">House Value:</label>
+                    <input type="number" id="waarde" required>
+
+                    <label for="oppervlakte">Surface Area:</label>
+                    <input type="number" id="oppervlakte" required>
+
+                    <label for="bouwjaar">Year of Construction:</label>
+                    <input type="number" id="bouwjaar" required>
+
+                    <button type="button" onclick="createHuis()">Create Huis</button>
+                </form>
+
+                <h2>Huis List</h2>
+                <ul id="huisList"></ul>
+            </section>
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+  <script>
+		Reveal.initialize({
+			hash: true,
+
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+
+    class Huis {
+        constructor(inwoners, straatNaam, nummer, postcode, waarde, oppervlakte, bouwjaar) {
+            this.inwoners = inwoners;
+            this.straatNaam = straatNaam;
+            this.nummer = nummer;
+            this.postcode = postcode;
+            this.waarde = waarde;
+            this.oppervlakte = oppervlakte;
+            this.bouwjaar = bouwjaar;
+        }
+
+        concatenateDetails() {
+            // Concatenate postal code, house number, and street name
+            return `${this.postcode} ${this.nummer} ${this.straatNaam}`;
+        }
+
+        calculateHouseValue() {
+            // Calculate house value based on construction year and surface area (replace this logic with your own calculation)
+            return this.bouwjaar * this.oppervlakte;
+        }
+    }
+
+    const huisArray = [];
+
+    function createHuis() {
+        // Get values from the form
+        const inwoners = document.getElementById('inwoners').value;
+        const straatNaam = document.getElementById('straatNaam').value;
+        const nummer = document.getElementById('nummer').value;
+        const postcode = document.getElementById('postcode').value;
+        const waarde = document.getElementById('waarde').value;
+        const oppervlakte = document.getElementById('oppervlakte').value;
+        const bouwjaar = document.getElementById('bouwjaar').value;
+
+        // Create an instance of the Huis class
+        const newHuis = new Huis(inwoners, straatNaam, nummer, postcode, waarde, oppervlakte, bouwjaar);
+
+        // Add the Huis object to the array
+        huisArray.push(newHuis);
+
+        // Update the list
+        updateHuisList();
+
+        // Optionally, you can clear the form after creating a Huis
+        document.getElementById('huisForm').reset();
+    }
+
+    function updateHuisList() {
+        // Clear the existing list
+        const huisList = document.getElementById('huisList');
+        huisList.innerHTML = '';
+
+        // Populate the list with Huis objects
+        huisArray.forEach((huis, index) => {
+            const listItem = document.createElement('li');
+
+            // Display Huis details
+            listItem.textContent = `Inwoners: ${huis.inwoners}, Straat: ${huis.straatNaam}, Nummer: ${huis.nummer}, Postcode: ${huis.postcode}, Waarde: ${huis.waarde}, Oppervlakte: ${huis.oppervlakte}, Bouwjaar: ${huis.bouwjaar}`;
+
+            // Add buttons with onclick events
+            const concatButton = document.createElement('button');
+            concatButton.textContent = 'Concatenate';
+            concatButton.onclick = () => alert(`Concatenated Details: ${huis.concatenateDetails()}`);
+
+            const calculateValueButton = document.createElement('button');
+            calculateValueButton.textContent = 'Calculate Value';
+            calculateValueButton.onclick = () => alert(`Calculated House Value: ${huis.calculateHouseValue()}`);
+
+            // Append buttons to the list item
+            listItem.appendChild(concatButton);
+            listItem.appendChild(calculateValueButton);
+
+            // Append list item to the list
+            huisList.appendChild(listItem);
+        });
+    }
+  </script>
+</body>
+</html>

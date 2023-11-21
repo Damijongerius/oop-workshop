@@ -20,11 +20,16 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
-				<h3>object georiënteerd programmeren</h3>
-				<img src="img/oop.png" alt="oops" class="frontImage">
-				<p class="author">
-					<small><small>gemaakt door dami ☺</small></small>
-				</p>
+				<section>
+					<h3>object georiënteerd programmeren</h3>
+					<img src="img/oop.png" alt="oops" class="frontImage">
+					<p class="author">
+						<small><small>gemaakt door dami ☺</small></small>
+					</p>
+				</section>
+				<section>
+					wich languages use this
+				</section>
 			</section>
 
 			<section>
@@ -38,11 +43,19 @@
 					<h3>rocket league?</h3>
 				</section>
 				<section style="background-color: #ffffcc;">
-					<h3>Herkennings punten</h3>
-					<p>het organiseren van code in herbruikbare stukjes, genaamd '<strong>objecten</strong>'.</p>
-					<p>werken met verschillende '<strong>klassen</strong>' voor structurering van code.</p>
-					<p>het concept van '<strong>encapsulatie</strong>' voor het verbergen van velden en methodes in
-						klassen.</p>
+					<h3>belangrijke punten</h3>
+					<ul>
+						<li><strong>klassen</strong></li>
+						<li><strong>objecten</strong></li>
+						<li><strong>Methodes</strong></li>
+						<li><strong>Attributes</strong></li>
+					</ul>
+					<ul>
+						<li><strong>Encapsulation</strong></li>
+						<li><strong>Inheritance</strong></li>
+						<li><strong>Polymorphism</strong></li>
+						<li><strong>Abstraction</strong></li>
+					</ul>
 				</section>
 				<section data-auto-animate>
 					<h2 data-id="code-title">Voorbeeldje</h2>
@@ -200,57 +213,204 @@
 				<section>
 					<h2 data-id="code-title">De huis Klasse</h2>
 					<p>Javascript</p>
-					<pre data-id="code-animation"><code data-trim data-line-numbers="|1,13|3-4|5-11|">
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers="|1,13|3-9">
 						class Huis {
 
-							constructor(inwoners, straatNaam, nummer,
-						       postcode, Waarde, Oppervlakte, bouwjaar) {
-								this._inwoners = inwoners
-								this._straatNaam = straatNaam;
-								this._nummer = nummer;
-								this._postcode = postcode;
-								this._Waarde = Waarde;
-								this._Oppervlakte = Oppervlakte;
-								this._bouwjaar = bouwjaar;
-							}
+    						inwoners;
+    						straatNaam;
+    						nummer;
+    						postcode;
+    						waarde;
+    						oppervlakte;
+    						bouwjaar;
+
 						}
 					</code></pre>
 				</section>
 				<section>
 					<h2 data-id="code-title">De huis Klasse</h2>
 					<p>Java/c#</p>
-					<pre data-id="code-animation"><code data-trim data-line-numbers="|1,21|3-9|11-12|13-19|">
+					<pre data-id="code-animation"><code data-trim data-line-numbers="|1,13|3-9">
 						public class Huis {
 
 							private int inwoners;
-							private String straatNaam;
+							private string straatNaam;
 							private int nummer;
-							private String postcode;
+							private string postcode;
 							private int Waarde;
 							private int Oppervlakte;
 							private int bouwjaar;
 
-							public Huis(int inwoners, String straatNaam, int nummer,
-						       String postcode, int Waarde, int Oppervlakte, int bouwjaar) {
-								this.inwoners = inwoners;
-								this.straatNaam = straatNaam;
-								this.nummer = nummer;
-								this.postcode = postcode;
-								this.Waarde = Waarde;
-								this.Oppervlakte = Oppervlakte;
-								this.bouwjaar = bouwjaar;
-							}
 						}
 					</code></pre>
 				</section>
 			</section>
-			<section>
+			<section data-background="#01796F">
 				<section>
-					<h2>het toepassen en gebruiken van klasse</h2>
+					<h2>implementatie</h2>
 				</section>
 				<section>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers="|1,13|3-9|15-18">
+						class Huis {
+
+    						inwoners;
+    						straatNaam;
+    						nummer;
+    						postcode;
+    						waarde;
+    						oppervlakte;
+    						bouwjaar;
+
+						}
+
+						const huis = new Huis();
+
+						huis.inwoners;
+						huis.straatNaam;
+						huis.postcode;
+						huis.bouwjaar;
+					</code></pre>
+				</section>
+				<section>
+					<div class="form-container">
+						<form id="huisForm">
+							<label for="inwoners">Number of Inhabitants:</label>
+							<input type="number" id="inwoners" required>
+					
+							<label for="straatNaam">Street Name:</label>
+							<input type="text" id="straatNaam" required>
+					
+							<label for="nummer">House Number:</label>
+							<input type="text" id="nummer" required>
+					
+							<label for="postcode">Postal Code:</label>
+							<input type="text" id="postcode" required>
+					
+							<label for="waarde">House Value:</label>
+							<input type="number" id="waarde" required>
+					
+							<label for="oppervlakte">Surface Area:</label>
+							<input type="number" id="oppervlakte" required>
+					
+							<label for="bouwjaar">Year of Construction:</label>
+							<input type="number" id="bouwjaar" required>
+					
+							<button type="button" onclick="createHuis()">Create Huis</button>
+						</form>
+
+						<div>
+							<h2>huizen</h2>
+							<ul id="huisList"><small></small></ul>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section data-background="#e69138">
+				<section>
+					<h2>Encapsulatie en constructors</h2>
+				</section>
+				<section>
+					<h2>procedureel programmeren</h2>
+
+					<div>
+						<div class="programmeer-container">
+							<ul>
+								<li>focus op functies</li>
+								<li>Globale Variabelen</li>
+								<li>staps gewijs</li>
+							</ul>
+						</div>
+						<pre data-id="code-animation"><code class="c" data-trim data-line-numbers="">
+							#include <stdio.h>
+
+								int main() {
+									int getallen[] = {1, 2, 3, 4, 5};
+									int lengte = sizeof(getallen) / sizeof(getallen[0]);
+									int som = 0;
+								
+									for (int i = 0; i < lengte; i++) {
+										som += getallen[i] * getallen[i];
+									}
+								
+									printf("De som van de kwadraten is: %d\n", som);
+								
+									return 0;
+								}
+						</code></pre>
+					</div>
 
 				</section>
+				<section>
+					<h2>functioneel programmeren</h2>
+
+					<div>
+						<div class="programmeer-container">
+							<ul>
+								<li>Onveranderlijkheid</li>
+								<li>puur alles wat functies kunnen</li>
+								<li>verandering vermijden</li>
+							</ul>
+						</div>
+						<pre data-id="code-animation"><code class="javascript" data-trim data-line-numbers="">
+							const getallen = [1, 2, 3, 4, 5];
+							const som = getallen.reduce((acc, getal) => acc + getal * getal, 0);
+							
+							console.log("De som van de kwadraten is: " + som);
+						</code></pre>
+					</div>
+				</section>
+				<section>
+					<h2>imperatief programmeren</h2>
+
+					<div>
+						<div class="programmeer-container">
+							<ul>
+								<li>duidelijke instructies</li>
+								<li>Globale Variabelen</li>
+								<li>heel statisch</li>
+							</ul>
+						</div>
+						<pre data-id="code-animation"><code class="python" data-trim data-line-numbers="">
+							getallen = [1, 2, 3, 4, 5]
+							som = 0
+							
+							for getal in getallen:
+								som += getal * geta
+							
+							print("De som van de kwadraten is:", som)
+						</code></pre>
+					</div>
+				</section>
+				<section>
+					<h2>Declaratief programmeren</h2>
+
+					<div>
+						<div class="programmeer-container">
+							<ul>
+								<li>instructies</li>
+								<li>script</li>
+							</ul>
+						</div>
+						<pre data-id="code-animation"><code class="sql" data-trim data-line-numbers="">
+							SELECT SUM(getal * getal) AS som_van_kwadraten
+							FROM getallen;
+						</code></pre>
+					</div>
+
+				</section>
+			</section>
+				<section data-background="#93c47d">
+					<h2>conclusie</h2>
+				</section>
+			</section>
+			<section data-background="#0b5394">
+				<h2>zijn  er vragen</h2>
+			</section>
+			<section data-background="#ffe599">
+				<h2>laatste tips</h2>
+				<p>als je project super groot is probeer eerst alle  classes uit teschrijven en wat ze doen kwa functies</p>
+				<p>maak en presenteer een workshop waardoor je er nogmeer zelf overleert</p>
+				<p>in meeste gevallen variabelen altijd prive maken</p>
 			</section>
 		</div>
 	</div>
@@ -260,6 +420,7 @@
 	<script src="plugin/notes/notes.js"></script>
 	<script src="plugin/markdown/markdown.js"></script>
 	<script src="plugin/highlight/highlight.js"></script>
+	<script src="JavaScript/index.js"></script>
 	<script>
 		Reveal.initialize({
 			hash: true,
